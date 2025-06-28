@@ -3,7 +3,7 @@ class Tile:
         self.position = position
         self.prev = None
         self.next = None
-        self.occupant = None  # reference to player
+        self.occupant = None  # Reference to the player on this tile
 
 class Board:
     def __init__(self, size):
@@ -14,3 +14,6 @@ class Board:
             current.next = new_tile
             new_tile.prev = current
             current = new_tile
+        # Optional: Make board circular if needed (can be commented if linear)
+        # current.next = self.head
+        # self.head.prev = current
